@@ -16,7 +16,7 @@ node {
 
    def app
    stage('docker build image') {
-     app = docker.build("andreimihai24/docker-nodejs-example:${commit_id}", '.')
+     app = docker.build('andreimihai24/docker-nodejs-example:${commit_id}', '.')
    }
 
    stage('docker push image') {
