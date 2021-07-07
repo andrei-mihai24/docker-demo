@@ -5,6 +5,7 @@ node {
      //sh "git rev-parse --short HEAD > .git/commit-id"
      //commit_id = readFile('.git/commit-id').trim()
      commit_id = bat(returnStdout: true, script: 'git rev-parse HEAD')
+     commit_id = commit_id.substring(commit_id.lastIndexOf(" ") + 1, commit_id.length())
      echo "CommitID: ${commit_id} ---"
    }
 
